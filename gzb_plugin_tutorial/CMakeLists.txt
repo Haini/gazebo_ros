@@ -18,6 +18,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 #list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
 
 # Build our plugin
-add_library(hello_world SHARED hello_world.cc)
-target_link_libraries(hello_world ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
-target_link_libraries(hello_world ${GAZEBO_LIBRARIES})
+add_library(hello_world2 SHARED hello_world.cc)
+add_library(factory SHARED factory.cc)
+target_link_libraries(hello_world2 ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+target_link_libraries(factory ${GAZEBO_LIBRARIES})

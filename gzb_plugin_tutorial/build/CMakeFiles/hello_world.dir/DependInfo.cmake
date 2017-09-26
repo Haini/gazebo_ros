@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/osboxes/gzb_plugin_tutorial/hello_world.cc" "/home/osboxes/gzb_plugin_tutorial/build/CMakeFiles/hello_world.dir/hello_world.cc.o"
+  "/home/consti/gazebo_ros/gzb_plugin_tutorial/hello_world.cc" "/home/consti/gazebo_ros/gzb_plugin_tutorial/build/CMakeFiles/hello_world.dir/hello_world.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -19,7 +19,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/gazebo-7"
-  "/usr/include/sdformat-4.0"
+  "/usr/include/sdformat-4.3"
   "/usr/include/ignition/math2"
   "/usr/include/OGRE"
   "/usr/include/OGRE/Terrain"

@@ -12,6 +12,8 @@
 #include "ros/subscribe_options.h"
 #include "std_msgs/Float32.h"
 #include "geometry_msgs/Point.h"
+#include "std_msgs/Float64.h"
+#include "geometry_msgs/Quaternion.h"
 
 //#include <boost/bind.hpp>
 //#include <gazebo/common/common.hh>
@@ -41,23 +43,45 @@ namespace gazebo {
 			
 			this->rosNode.reset(new ros::NodeHandle("gazebo_client"));
 			ros::SubscribeOptions so = ros::SubscribeOptions::create<geometry_msgs::Point>("/" + this->model->GetName() + "/position_O", 1, boost::bind(&QuadModel::OnRosMsg, this, _1), ros::VoidPtr(), &this->rosQueue);
+
+			ros::SubscribeOptions soQuat = ros::SubscribeOptions::create<geometry_msgs::Quaternion>("/" + this->model->GetName() + "/quaternion_O", 1, boost::bind(&QuadModel::OnRosMsgQuat, this, _1), ros::VoidPtr(), &this->rosQueue);
 			this->rosSub = this->rosNode->subscribe(so);
+            this->rosSubQuat = this->rosNode->subscribe(soQuat);
 			
 			this->rosQueueThread = std::thread(std::bind(&QuadModel::QueueThread, this));
 		}	
 
 		private: std::unique_ptr<ros::NodeHandle> rosNode;
-		private: ros::Subscriber rosSub;
+		private: ros::Subscriber rosSub;    /** Subscriber for Point Topic */
+        private: ros::Subscriber rosSubQuat;/** Subscriber for Quat Topic */
 		private: ros::CallbackQueue rosQueue;
 		private: std::thread rosQueueThread;
 		private: physics::ModelPtr model;
+        private: double quatX;
+        private: double quatY;
+        private: double quatZ;
+        private: double quatW;
+
+		public: void OnRosMsgQuat(const geometry_msgs::QuaternionConstPtr &_msg)
+        {
+			quatX = _msg->x;
+			quatY = _msg->y;
+			quatZ = _msg->z;
+			quatW = _msg->z;
+        }
 
 		public: void OnRosMsg(const geometry_msgs::PointConstPtr &_msg)
 		{
 			double x = _msg->x;
 			double y = _msg->y;
 			double z = _msg->z;
-			math::Pose pose = math::Pose(x,y,z, 0, 0, 0);
+
+            math::Vector3 vect = math::Vector3(x, y, z);
+
+            /* We make the assumption that the messages are in sync most of the time, as the queue limit in Simulink is 1. */
+            math::Quaternion quat = math::Quaternion(quatW, quatX, quatY, quatZ);
+			math::Pose pose = math::Pose(vect, quat);
+            std::cerr << x << ", " << y << ", " << z << ", | " << quatW << ", " << quatX << ", " << quatY << "\n";
 			this->model->SetWorldPose(pose);
 		}
 

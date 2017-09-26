@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/osboxes/gzb_plugin_tutorial/hello_world.cc
+/home/consti/gazebo_ros/gzb_plugin_tutorial/hello_world.cc
 gazebo/gazebo.hh
 -
 gazebo/physics/physics.hh
@@ -14,15 +14,15 @@ gazebo/physics/physics.hh
 thread
 -
 ros/ros.h
-/home/osboxes/gzb_plugin_tutorial/ros/ros.h
+/home/consti/gazebo_ros/gzb_plugin_tutorial/ros/ros.h
 ros/callback_queue.h
-/home/osboxes/gzb_plugin_tutorial/ros/callback_queue.h
+/home/consti/gazebo_ros/gzb_plugin_tutorial/ros/callback_queue.h
 ros/subscribe_options.h
-/home/osboxes/gzb_plugin_tutorial/ros/subscribe_options.h
+/home/consti/gazebo_ros/gzb_plugin_tutorial/ros/subscribe_options.h
 std_msgs/Float32.h
-/home/osboxes/gzb_plugin_tutorial/std_msgs/Float32.h
+/home/consti/gazebo_ros/gzb_plugin_tutorial/std_msgs/Float32.h
 geometry_msgs/Point.h
-/home/osboxes/gzb_plugin_tutorial/geometry_msgs/Point.h
+/home/consti/gazebo_ros/gzb_plugin_tutorial/geometry_msgs/Point.h
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string
@@ -6336,11 +6336,11 @@ ignition/math/Matrix4.hh
 
 /usr/include/ignition/math2/ignition/math/config.hh
 
-/usr/include/sdformat-4.0/sdf/Assert.hh
+/usr/include/sdformat-4.3/sdf/Assert.hh
 boost/assert.hpp
 -
 
-/usr/include/sdformat-4.0/sdf/Console.hh
+/usr/include/sdformat-4.3/sdf/Console.hh
 iostream
 -
 fstream
@@ -6350,17 +6350,17 @@ string
 memory
 -
 sdf/system_util.hh
-/usr/include/sdformat-4.0/sdf/sdf/system_util.hh
+/usr/include/sdformat-4.3/sdf/sdf/system_util.hh
 
-/usr/include/sdformat-4.0/sdf/Converter.hh
+/usr/include/sdformat-4.3/sdf/Converter.hh
 tinyxml.h
 -
 string
 -
 sdf/system_util.hh
-/usr/include/sdformat-4.0/sdf/sdf/system_util.hh
+/usr/include/sdformat-4.3/sdf/sdf/system_util.hh
 
-/usr/include/sdformat-4.0/sdf/Element.hh
+/usr/include/sdformat-4.3/sdf/Element.hh
 string
 -
 vector
@@ -6368,13 +6368,13 @@ vector
 memory
 -
 sdf/Param.hh
-/usr/include/sdformat-4.0/sdf/sdf/Param.hh
+/usr/include/sdformat-4.3/sdf/sdf/Param.hh
 sdf/system_util.hh
-/usr/include/sdformat-4.0/sdf/sdf/system_util.hh
+/usr/include/sdformat-4.3/sdf/sdf/system_util.hh
 sdf/Types.hh
-/usr/include/sdformat-4.0/sdf/sdf/Types.hh
+/usr/include/sdformat-4.3/sdf/sdf/Types.hh
 
-/usr/include/sdformat-4.0/sdf/Exception.hh
+/usr/include/sdformat-4.3/sdf/Exception.hh
 iostream
 -
 sstream
@@ -6384,14 +6384,16 @@ stdint.h
 string
 -
 sdf/system_util.hh
-/usr/include/sdformat-4.0/sdf/sdf/system_util.hh
+/usr/include/sdformat-4.3/sdf/sdf/system_util.hh
 
-/usr/include/sdformat-4.0/sdf/Param.hh
+/usr/include/sdformat-4.3/sdf/Param.hh
 boost/lexical_cast.hpp
 -
 boost/any.hpp
 -
 boost/variant.hpp
+-
+boost/version.hpp
 -
 memory
 -
@@ -6408,13 +6410,13 @@ vector
 ignition/math.hh
 -
 sdf/Console.hh
-/usr/include/sdformat-4.0/sdf/sdf/Console.hh
+/usr/include/sdformat-4.3/sdf/sdf/Console.hh
 sdf/system_util.hh
-/usr/include/sdformat-4.0/sdf/sdf/system_util.hh
+/usr/include/sdformat-4.3/sdf/sdf/system_util.hh
 sdf/Types.hh
-/usr/include/sdformat-4.0/sdf/sdf/Types.hh
+/usr/include/sdformat-4.3/sdf/sdf/Types.hh
 
-/usr/include/sdformat-4.0/sdf/SDFImpl.hh
+/usr/include/sdformat-4.3/sdf/SDFImpl.hh
 string
 -
 memory
@@ -6422,15 +6424,15 @@ memory
 functional
 -
 sdf/Param.hh
-/usr/include/sdformat-4.0/sdf/sdf/Param.hh
+/usr/include/sdformat-4.3/sdf/sdf/Param.hh
 sdf/Element.hh
-/usr/include/sdformat-4.0/sdf/sdf/Element.hh
+/usr/include/sdformat-4.3/sdf/sdf/Element.hh
 sdf/system_util.hh
-/usr/include/sdformat-4.0/sdf/sdf/system_util.hh
+/usr/include/sdformat-4.3/sdf/sdf/system_util.hh
 sdf/Types.hh
-/usr/include/sdformat-4.0/sdf/sdf/Types.hh
+/usr/include/sdformat-4.3/sdf/sdf/Types.hh
 
-/usr/include/sdformat-4.0/sdf/Types.hh
+/usr/include/sdformat-4.3/sdf/Types.hh
 algorithm
 -
 cmath
@@ -6442,19 +6444,19 @@ sstream
 vector
 -
 sdf/system_util.hh
-/usr/include/sdformat-4.0/sdf/sdf/system_util.hh
+/usr/include/sdformat-4.3/sdf/sdf/system_util.hh
 
-/usr/include/sdformat-4.0/sdf/parser.hh
+/usr/include/sdformat-4.3/sdf/parser.hh
 tinyxml.h
 -
 string
 -
 sdf/SDFImpl.hh
-/usr/include/sdformat-4.0/sdf/sdf/SDFImpl.hh
+/usr/include/sdformat-4.3/sdf/sdf/SDFImpl.hh
 sdf/system_util.hh
-/usr/include/sdformat-4.0/sdf/sdf/system_util.hh
+/usr/include/sdformat-4.3/sdf/sdf/system_util.hh
 
-/usr/include/sdformat-4.0/sdf/sdf.hh
+/usr/include/sdformat-4.3/sdf/sdf.hh
 sdf/Assert.hh
 -
 sdf/Console.hh
@@ -6478,7 +6480,7 @@ sdf/system_util.hh
 sdf/sdf_config.h
 -
 
-/usr/include/sdformat-4.0/sdf/sdf_config.h
+/usr/include/sdformat-4.3/sdf/sdf_config.h
 
-/usr/include/sdformat-4.0/sdf/system_util.hh
+/usr/include/sdformat-4.3/sdf/system_util.hh
 
