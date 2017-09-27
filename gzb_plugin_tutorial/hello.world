@@ -9,9 +9,16 @@
 		</include>
 			
 		<model name="quadrotor">
-			<pose>0 0 0.5 0 0 0</pose>
-			<static>true</static>
 			<link name="link">
+			<pose>0 0 0.5 0 0 0</pose>
+                <collision name="quad_collision">
+                    <geometry>
+                        <box>
+                            <size> 1 1 1</size>
+                        </box>
+                    </geometry>
+                </collision>
+
 				<visual name="visual">
 					<geometry>
 						<box>
@@ -19,6 +26,12 @@
 						</box>
 					</geometry>
 				</visual>
+
+                <sensor name="my_contact" type="contact">
+                    <contact>
+                        <collision>quad_collision</collision>
+                    </contact>
+                </sensor>
 			</link>
 		<plugin name="test"  filename="libhello_world2.so">
         </plugin>

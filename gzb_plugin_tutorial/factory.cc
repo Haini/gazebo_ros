@@ -69,7 +69,6 @@ class Factory : public WorldPlugin
            "<sdf version ='1.5'>\
               <model name ='box"+strI+"'>\
                 <pose>"+strX+" "+strY+" "+strZ+" 0 0 0</pose>\
-                <gravity>0</gravity>\
                 <static>1</static>\
                 <link name ='link'>\
                   <pose>0 0 0 0 0 0</pose>\
