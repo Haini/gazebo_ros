@@ -3,8 +3,21 @@
 
 #include <string>
 
+#include <thread>
+#include "ros/ros.h"
+#include "ros/callback_queue.h"
+#include "ros/subscribe_options.h"
+#include "ros/advertise_options.h"
+#include "std_msgs/Int32.h"
+#include "geometry_msgs/Point.h"
+#include "std_msgs/Float64.h"
+#include "geometry_msgs/Quaternion.h"
+#include "std_msgs/String.h"
+
 #include <gazebo/gazebo.hh>
 #include <gazebo/sensors/sensors.hh>
+#include <gazebo_plugins/PubQueue.h>
+
 
 namespace gazebo
 {
@@ -31,6 +44,15 @@ namespace gazebo
     /// \brief Connection that maintains a link between the contact sensor's
     /// updated signal and the OnUpdate callback.
     private: event::ConnectionPtr updateConnection;
+
+    /* Stuff that is concerned with ROS. */
+	private: std::unique_ptr<ros::NodeHandle> rosNode;
+    private: ros::Publisher rosPub;
+    //private: std_msgs::String msg;
+    private: std_msgs::Int32 msg;
+    private: PubQueue<std_msgs::Int32>::Ptr pub_Queue;
+    private: PubMultiQueue pmq;
+
   };
 }
 #endif

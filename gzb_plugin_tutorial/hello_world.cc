@@ -42,7 +42,10 @@ namespace gazebo {
 			std::cerr << "Model Name is: " + this->model->GetName() << "\n";
 			
 			this->rosNode.reset(new ros::NodeHandle("gazebo_client"));
-			ros::SubscribeOptions so = ros::SubscribeOptions::create<geometry_msgs::Point>("/" + this->model->GetName() + "/position_O", 1, boost::bind(&QuadModel::OnRosMsg, this, _1), ros::VoidPtr(), &this->rosQueue);
+			ros::SubscribeOptions so = 
+                ros::SubscribeOptions::create<geometry_msgs::Point>("/" + this->model->GetName() + "/position_O",
+                1, boost::bind(&QuadModel::OnRosMsg, this, _1), 
+                ros::VoidPtr(), &this->rosQueue);
 
 			ros::SubscribeOptions soQuat = ros::SubscribeOptions::create<geometry_msgs::Quaternion>("/" + this->model->GetName() + "/quaternion_O", 1, boost::bind(&QuadModel::OnRosMsgQuat, this, _1), ros::VoidPtr(), &this->rosQueue);
 			this->rosSub = this->rosNode->subscribe(so);
