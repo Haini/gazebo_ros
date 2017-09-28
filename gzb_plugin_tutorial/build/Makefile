@@ -150,6 +150,19 @@ rosgraph_msgs_generate_messages_eus/fast:
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named contact
+
+# Build rule for target.
+contact: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 contact
+.PHONY : contact
+
+# fast build rule for target.
+contact/fast:
+	$(MAKE) -f CMakeFiles/contact.dir/build.make CMakeFiles/contact.dir/build
+.PHONY : contact/fast
+
+#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -396,6 +409,33 @@ factory/fast:
 	$(MAKE) -f CMakeFiles/factory.dir/build.make CMakeFiles/factory.dir/build
 .PHONY : factory/fast
 
+ContactPlugin.o: ContactPlugin.cc.o
+
+.PHONY : ContactPlugin.o
+
+# target to build an object file
+ContactPlugin.cc.o:
+	$(MAKE) -f CMakeFiles/contact.dir/build.make CMakeFiles/contact.dir/ContactPlugin.cc.o
+.PHONY : ContactPlugin.cc.o
+
+ContactPlugin.i: ContactPlugin.cc.i
+
+.PHONY : ContactPlugin.i
+
+# target to preprocess a source file
+ContactPlugin.cc.i:
+	$(MAKE) -f CMakeFiles/contact.dir/build.make CMakeFiles/contact.dir/ContactPlugin.cc.i
+.PHONY : ContactPlugin.cc.i
+
+ContactPlugin.s: ContactPlugin.cc.s
+
+.PHONY : ContactPlugin.s
+
+# target to generate assembly for a file
+ContactPlugin.cc.s:
+	$(MAKE) -f CMakeFiles/contact.dir/build.make CMakeFiles/contact.dir/ContactPlugin.cc.s
+.PHONY : ContactPlugin.cc.s
+
 factory.o: factory.cc.o
 
 .PHONY : factory.o
@@ -461,6 +501,7 @@ help:
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... contact"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_cpp"
@@ -480,6 +521,9 @@ help:
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... hello_world2"
 	@echo "... factory"
+	@echo "... ContactPlugin.o"
+	@echo "... ContactPlugin.i"
+	@echo "... ContactPlugin.s"
 	@echo "... factory.o"
 	@echo "... factory.i"
 	@echo "... factory.s"

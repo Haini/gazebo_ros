@@ -48,7 +48,7 @@ class Factory : public WorldPlugin
 
     for (int i=0;i <  85; i+=6) {
         sdf::SDF boxSDF;
-        strI = std::to_string(i%15);
+        strI = std::to_string(i);
 
         tCoord[0] = tData[i];
         tCoord[1] = tData[i+1];
