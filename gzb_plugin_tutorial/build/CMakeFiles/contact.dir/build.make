@@ -131,8 +131,8 @@ libcontact.so: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
 libcontact.so: /usr/lib/x86_64-linux-gnu/libOgrePaging.so
 libcontact.so: /usr/lib/x86_64-linux-gnu/libignition-math2.so
 libcontact.so: /opt/ros/kinetic/lib/libroscpp.so
-libcontact.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 libcontact.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+libcontact.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 libcontact.so: /opt/ros/kinetic/lib/librosconsole.so
 libcontact.so: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
 libcontact.so: /opt/ros/kinetic/lib/librosconsole_backend_interface.so

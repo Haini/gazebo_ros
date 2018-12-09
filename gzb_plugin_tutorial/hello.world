@@ -22,10 +22,16 @@
 
 				<visual name="visual">
 					<geometry>
+					<mesh>
+					  <uri>model://quadrotor/meshes/quadrotor_base.dae</uri>
+					</mesh>
+					</geometry>
+
+					<!--<geometry>
 						<box>
 							<size> 1 1 1</size>
 						</box>
-					</geometry>
+					</geometry>-->
 				</visual>
 
                 <sensor name="my_contact" type="contact">
